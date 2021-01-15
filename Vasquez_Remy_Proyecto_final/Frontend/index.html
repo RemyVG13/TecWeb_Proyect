@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie DB</title>
+
+    <script src="./index.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="../js/bootstrap.bundle.js.map"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+</head>
+
+<body style="background-image: url('https://img.microsiervos.com/images2020/PeliculasGeek.jpg') ;">
+
+    
+
+    <br>
+    <div class="container-fluid p-3" style="margin-top: 200px;">
+        
+        <div class="row ">
+            
+            <!--Movies-->   
+            <div class="col-xl-7 col-lg-7 col-sm-4">
+                <div class="row" id="movies-list"></div>
+            </div>
+
+            <!--Filtros-->
+            <div class="col-xl-4 col-lg-4 col-sm-8 text-white" style="background-color: #26272b; border-radius: 15px;">
+                <br>
+                <!--Dropdown-->
+                <h1 class="text-center text-input-edit-movie">Movies DB</h1>
+                <br><br>
+                
+                <!--Filtros-->
+                <form class="p-4" name="login-frm" id ="login-frm-id">
+                    <input required type="text" autocomplete="off" class="login-input" id="email-frm-id" name="email" placeholder="Correo">
+                    <span id="login-email-error" style="display: none; color:red;"></span>
+                    <br><br>
+                    <input required type="password" minlength="5" class="login-input" id="password-frm-id" name="password" placeholder="Contraseña">
+                    <br>
+                    <input type="checkbox" onclick="showPassword()">&nbsp Mostrar Contraseña
+                    <span id="login-password-error" style="display: none; color:red;"></span><br>
+                    <br><br><br><br>
+                    
+                    <!-- <input type="submit"> -->
+                    <div class="text-center">
+                        <input  id="login-btn" class="movie-to-update-submit p-2" type="submit" value="Iniciar Sesion" style="font-weight: bold; font-size:18px; border-radius:25px; color:black; background-color:goldenrod;">
+                        
+                    </div>
+                    
+                    
+                </form>
+                <br>
+            </div>
+            <div class="col-xl-1 col-lg-1 col-sm-4">
+                <div class="row" id="movies-list"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>

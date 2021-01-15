@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie DB</title>
+
+    <script src="./list.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="../js/bootstrap.bundle.js.map"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <nav style="background-color: #26272b;" class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand" href="/movies/list.html">MovieDB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="./list.html">Peliculas <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../productions/list.html">Casas Productoras</a>
+            </li>
+            </ul>
+
+            <div>
+              <h7 class="text-white"id="sayHi-id"></h7>  
+              <form id="search-movie-frm" class="form-inline my-2 my-lg-0">
+                <input autocomplete="off" class="form-control mr-sm-2" type="search" name="movie_phrase_to_search" placeholder="Buscar" aria-label="Search">
+                <button id="search-movie-btn" class="btn  p-0 " type="submit" style="font-size:30px;">&#x1F50D</button>
+              </form> 
+            </div>
+            <div class="text-center ml-4">
+              <input  id="logout-btn " class="p-2" type="button" value="Cerrar Sesion" onclick="logout()" style="font-weight: bold; font-size:18px; border-radius:25px; color:black; background-color:goldenrod;">
+            </div>
+            
+        </div>
+         
+    </nav>
+        
+    <br>
+    <div class="container">
+        
+        <div class="row">
+            <!--Filtros-->
+            <div class="col-xl-2 col-lg-2 col-sm-12 text-white">
+                <br>
+                <!--Dropdown-->
+                <div style="background-color: #26272b; border-radius: 15px;" class="p-2">
+                    <label for="orderBy"><b> Ordenar: </b> </label>
+                    <select name="orderBy" id="orderByid" style="background-color: rgba(128, 128, 128, 0); border-color: rgba(128, 128, 128, 0); color: gold;">
+                    <option style="background-color: gray;" value="title">Titulo</option>
+                    <option style="background-color: gray;" value="rating">Rating</option>
+                </select>
+                </div>
+                
+
+                <br>
+                <!--Filtros-->
+                <form style="background-color: #26272b; border-radius: 15px;" class="p-2"name="filterfrm" id ="filterfrmid">
+                    <h4>Genero</h4>
+                    <input style="display: none;" type="radio" id="all-rdb" name="filter" value="all">
+                    <label for="all-rdb">Todos</label><br>
+                    <input style="display: none;" type="radio" id="action-rdb" name="filter" value="Accion">
+                    <label for="action-rdb" class="filter-rdb ms-5 ps-5" >Accion</label><br>
+
+                    <input style="display: none;" type="radio" id="fiction-rdb" name="filter" value="Ciencia Ficcion">
+                    <label for="fiction-rdb" class="filter-rdb">Ciencia Ficcion</label><br>
+
+                    <input style="display: none;" type="radio" id="comedy-rdb" name="filter" value="Comedia">
+                    <label for="comedy-rdb" class="filter-rdb">Comedia</label><br>
+                    <input style="display: none;" type="radio" id="drama-rdb" name="filter" value="Drama">
+                    <label for="drama-rdb" class="filter-rdb">Drama</label><br>
+                    <input style="display: none;" type="radio" id="fantasy-rdb" name="filter" value="Fantasia">
+                    <label for="fantasy-rdb" class="filter-rdb">Fantasia</label><br>
+                    <input style="display: none;" type="radio" id="musical-rdb" name="filter" value="Musical">
+                    <label for="musical-rdb" class="filter-rdb">Musical</label><br>
+                    <input style="display: none;" type="radio" id="terror-rdb" name="filter" value="Terror">
+                    <label for="terror-rdb" class="filter-rdb">Terror</label><br>
+                    
+                </form>
+
+                <br>
+            </div>
+            <!--Movies-->   
+            <div class="col-xl-10 col-lg-10 col-sm-12">
+                <div class="row" id="movies-list"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>Descripcion</h6>
+                <p class="text-justify">
+                    Proyecto de gestion de peliculas realizado por Remy Vasquez para la materia de Tecnologia Web
+                </p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Otras Paginas</h6>
+              <ul class="footer-links">
+                <li><a href="https://flickmetrix.com/">Flick Metrix</a></li>
+                <li><a href="https://www.rottentomatoes.com/browse/opening">Rotten Tomatoes</a></li>
+                <li><a href="https://www.themoviedb.org/?language=es">TMDb</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Contactame</h6>
+              <ul class="footer-links">
+                <li><a href="https://www.facebook.com/profile.php?id=100009158149385">Facebook</a></li>
+                <li><a href="https://www.instagram.com/vasquezremy/?hl=es-la">Instagram</a></li>
+                <li><a href="https://twitter.com/emrevago2">Twitter</a></li>
+                <li><a href="https://www.youtube.com/channel/UCZKkaaRd2EYoy_Cz20JjsOA/videos">Youtube</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2020 Derechos reservados por Remy SA.
+              </p>
+            </div>
+          </div>
+        </div>
+  </footer>
+</body>
+
+</html>

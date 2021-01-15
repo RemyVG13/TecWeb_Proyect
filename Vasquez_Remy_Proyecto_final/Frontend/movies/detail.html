@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pelicula</title>
+
+    <script src="./detail.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="../js/bootstrap.bundle.js.map"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div class="modal fade" id="confirm-delete-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title text-dark" id="exampleModalLabel">Borrar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body text-dark">
+                    ¿Estás seguro que deseas eliminar permanentemente esta película?
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-primary" id="delete-movie-confirmed">Si</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <nav style="background-color: #26272b;" class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/movies/list.html">MovieDB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/movies/list.html">Peliculas <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/productions/list.html">Casas Productoras</a>
+            </li>
+          </ul>  
+        </div>
+        <div>
+          <h7 class="text-white"id="sayHi-id"></h7>  
+        </div>
+        <div class="text-center ml-4">
+          <input  id="logout-btn " class="p-2" type="button" value="Cerrar Sesion" onclick="logout()" style="font-weight: bold; font-size:18px; border-radius:25px; color:black; background-color:goldenrod;">
+        </div>
+    </nav>
+    <br>
+    <div class="container">
+        
+        <div class="row">
+            <!--Filtros-->
+            <!-- Modal -->
+            
+            <!--Movie-->
+            <div class="col-12 ">
+
+                <div id="movie-info"></div>         
+
+                <br>
+                <br>
+                <br>
+                
+            </div>
+
+            <!--Dropdown-->
+         
+      
+            
+        </div>
+        
+    </div>
+    <footer class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h6>Descripcion</h6>
+                <p class="text-justify">
+                    Proyecto de gestion de peliculas realizado por Remy Vasquez para la materia de Tecnologia Web
+                </p>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Otras Paginas</h6>
+              <ul class="footer-links">
+                <li><a href="https://flickmetrix.com/">Flick Metrix</a></li>
+                <li><a href="https://www.rottentomatoes.com/browse/opening">Rotten Tomatoes</a></li>
+                <li><a href="https://www.themoviedb.org/?language=es">TMDb</a></li>
+              </ul>
+            </div>
+  
+            <div class="col-xs-6 col-md-3">
+              <h6>Contactame</h6>
+              <ul class="footer-links">
+                <li><a href="https://www.facebook.com/profile.php?id=100009158149385">Facebook</a></li>
+                <li><a href="https://www.instagram.com/vasquezremy/?hl=es-la">Instagram</a></li>
+                <li><a href="https://twitter.com/emrevago2">Twitter</a></li>
+                <li><a href="https://www.youtube.com/channel/UCZKkaaRd2EYoy_Cz20JjsOA/videos">Youtube</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-sm-6 col-xs-12">
+              <p class="copyright-text">Copyright &copy; 2020 Derechos reservados por Remy SA.
+              </p>
+            </div>
+          </div>
+        </div>
+  </footer>
+</body>
+
+</html>
